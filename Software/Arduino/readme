@@ -1,0 +1,13 @@
+'Gyroscope' and 'Robot' libraries must be in directory /home/<user_name>/arduino-1.0.4/libraries
+'robot_arduino.ino' should be in your Arduino Sketchbook directory.
+
+Terminal:
+cd arduino-1.0.4
+sudo arduino
+
+From Arduino IDE do the follow steps:
+1) File->Sketchbook->robot_arduino.ino
+2) Verify
+3) Upload
+4) Tools->Serial monitor (ctrl+m)
+
