@@ -1,0 +1,30 @@
+This is a ROS package that has to be located in your ROS workspace. It runs and works under:
+-Ubuntu 12.10
+-ROS groovy with rosbuild (CMake-based build system for ROS).
+You could migrate to catkin with http://ros.org/wiki/catkin/migrating_from_rosbuild
+
+The robot has 3 operation modes: debugger mode, telepresence mode, and exploration and mapping mode. 
+For more information please see https://github.com/agucaverzasi/Robot-movil-mapeo3D/blob/master/Informe.pdf
+
+Go your ROS workspace directory with:
+cd ~/home/<your_user>/groovy_workspace
+
+***Debugger mode (for testing)*** You may execute:
+-Terminal 1 (on-board computer 'Server'):	roscore
+-Terminal 2 (on-board computer 'Server'):	rosrun robot robot
+-Terminal 3 (on-board computer 'Server'):	rosrun robot keyboard
+	
+***Teleoperation mode***
+-Terminal 1 (on-board computer 'Server'):	export ROS_MASTER_URI=http://agucaverzasi:11311/
+											roscore
+-Terminal 2 (on-board computer 'Server'):	rosrun robot wifi_listener 
+-Terminal 3 (on-board computer 'Server'):	rosrun robot robot
+
+-Terminal 1 (remote computer 'Client'):		export ROS_MASTER_URI=http://agucaverzasi:11311/
+-Terminal 2 (remote computer 'Client'):		rosrun robot wifi_talker
+
+***Exploration and mapping mode***
+Same as Teleoperation mode but with one more terminal
+-Terminal 4 (on-board computer 'Server'):	rosrun robot planner
+
+
